@@ -3,7 +3,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    // output: 'static',
-    // base: '/'
-    site: 'https://erbriones.github.io',
+    site: 'https://enrbriones.github.io',
 });
