@@ -1,0 +1,76 @@
+---
+import personal from "../data/personal.data";
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <a href="#" class="logo"
+        ><span class="fas fa-code"></span> {personal.fullName}</a
+      >
+      <ul class="nav-links">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#experience">Experiencia</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* --- Header & Navbar --- */
+  .header {
+    background-color: var(--card-background);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+
+  .logo h1 {
+    font-size: inherit;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-left: 30px;
+  }
+
+  .nav-links a {
+    color: var(--text-color);
+    font-weight: 600;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+</style>

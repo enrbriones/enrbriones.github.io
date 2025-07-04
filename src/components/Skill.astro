@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string;
+  skills: string[];
+  icon: string;
+}
+
+const { title, skills, icon } = Astro.props;
+---
+
+<div class="skill-category">
+  <h3><i class={icon}></i> {title}</h3>
+  <ul>
+    {skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+</div>
+
+<style>
+  /* --- Skills Section --- */
+  .skill-category {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .skill-category h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: var(--primary-color);
+  }
+
+  .skill-category h3 .fas {
+    margin-right: 10px;
+    color: var(--secondary-color);
+  }
+
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skill-category li {
+    background-color: #e9f5ff; /* Light primary color */
+    color: var(--primary-color);
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    font-weight: 600;
+  }
+</style>

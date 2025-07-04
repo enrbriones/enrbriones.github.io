@@ -1,0 +1,27 @@
+---
+import Skill from "./Skill.astro";
+import skillsList from "../data/skills.data";
+---
+
+<!-- Skills & Technologies Section -->
+<section id="skills" class="skills-section section-padding bg-light">
+  <div class="container">
+    <h2>Mis Habilidades y Tecnologías 🧠</h2>
+    <div class="skills-grid">
+      {
+        skillsList.map((skill) => (
+          <Skill title={skill.title} icon={skill.icon} skills={skill.skills} />
+        ))
+      }
+    </div>
+
+    <style>
+      /* --- Skills Section --- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+    </style>
+  </div>
+</section>

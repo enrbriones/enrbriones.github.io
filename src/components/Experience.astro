@@ -1,0 +1,120 @@
+---
+import experienceList from "../data/experience.data";
+import ExpCard from "./ExpCard.astro";
+import contact from "../data/contact.data";
+---
+
+<!-- Experience Section (or Projects Section) -->
+<section id="experience" class="experience-section section-padding">
+  <div class="container">
+    <h2>Experiencia y Proyectos 📁</h2>
+    <div class="experience-grid">
+      <!-- Experience Item 1 -->
+      {
+        experienceList.map((exp) => (
+          <ExpCard
+            position={exp.position}
+            company={exp.company}
+            description={exp.description}
+            date={exp.date}
+            goals={exp.goals}
+            tech={exp?.tech}
+            demoLink={exp?.demoLink}
+            githubLink={exp?.githubLink}
+          />
+        ))
+      }
+
+      <div class="text-center">
+        <a
+          href={contact.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn primary mt-3"
+          >Ver más en GitHub <i class="fab fa-github"></i></a
+        >
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* --- Experience Section --- */
+    .experience-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .experience-card {
+      background-color: var(--card-background);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid var(--primary-color); /* Highlight */
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience-card .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .experience-card h3 {
+      margin: 0;
+      font-size: 1.4em;
+      flex: 1; /* Allows it to take up available space */
+    }
+
+    .experience-card .company-name {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .experience-card .dates {
+      font-size: 0.9em;
+      color: var(--secondary-color);
+      white-space: nowrap; /* Keep dates on one line */
+    }
+
+    .experience-card .role-description {
+      font-style: italic;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+
+    .experience-card .achievements {
+      list-style: disc;
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .experience-card .achievements li {
+      margin-bottom: 8px;
+    }
+
+    .experience-card .technologies-used {
+      font-size: 0.9em;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-3 {
+      margin-top: 30px;
+    }
+  </style>
+</section>

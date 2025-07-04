@@ -1,0 +1,108 @@
+---
+import personal from "../data/personal.data";
+---
+
+<section id="hero" class="hero-section">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>Hola, soy <span>{personal.firstName}!</span></h1>
+      <p class="tagline">
+        Entusiasta Desarrollador de Software | Construyendo Soluciones
+        Escalables e Intuitivas
+      </p>
+
+      <p class="intro-description">
+        <span>
+          <img src="https://flagcdn.com/w40/cl.png" alt="Chile" width="20" />
+        </span> Soy un desarrollador Full Stack con talento para transformar problemas
+        complejos en software elegante, eficiente y robusto.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn primary">Ponerse en Contacto</a>
+        <a
+          href="/CV-ENRIQUE-BRIONES-FULLSTACK.pdf"
+          target="_blank"
+          class="btn secondary">Descargar CV <i class="fas fa-download"></i></a
+        >
+      </div>
+    </div>
+    <div class="hero-image">
+      <img
+        src="/enrique_foto_linkedin.jpg"
+        alt="Enrique Briones Profile Picture"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* --- Hero Section --- */
+  .hero-section {
+    background: linear-gradient(
+      to right,
+      var(--background-color),
+      #eef0f3
+    ); /* Subtle gradient */
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .hero-text {
+    flex: 2;
+    min-width: 300px;
+  }
+
+  .hero-text h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+  }
+
+  .hero-text h1 span {
+    color: var(--primary-color);
+  }
+
+  .hero-text .tagline {
+    font-size: 1.4em;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+  }
+
+  .hero-text .intro-description {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+
+  .hero-image {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image img {
+    width: 280px; /* Adjust size as needed */
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* filter: grayscale(100%); */
+  }
+
+  .hero-image img:hover {
+    transform: scale(1.03);
+  }
+</style>

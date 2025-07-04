@@ -1,0 +1,57 @@
+---
+import contact from "../data/contact.data";
+---
+
+<footer class="footer">
+  <div class="container">
+    <p>
+      Enrique Briones. Web creada con Astro. Revisa el proyecto <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/enrbriones/enrbriones.github.io">acá.</a
+      >
+    </p>
+    <div class="footer-social-links">
+      <a
+        href={contact.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a
+      >
+      <a
+        href={contact.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"><i class="fab fa-github"></i></a
+      >
+      <a href={`mailto:${contact.email}`} aria-label="Email"
+        ><i class="fas fa-envelope"></i></a
+      >
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* --- Footer --- */
+  .footer {
+    background-color: var(--heading-color); /* Dark background */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .footer p {
+    margin-bottom: 15px;
+  }
+
+  .footer-social-links a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  .footer-social-links a:hover {
+    color: var(--primary-color);
+  }
+</style>
